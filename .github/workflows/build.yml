@@ -21,3 +21,7 @@ jobs:
 
     - name: Build
       run: go build -v .
+      
+    - name: print!
+      run: echo "github ref; ${{ github.ref }}, base_ref; ${{ github.base_ref }}"
+        
