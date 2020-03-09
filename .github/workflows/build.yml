@@ -6,6 +6,8 @@ jobs:
     name: Build and test
     runs-on: ubuntu-latest
     steps:
+    - name: check go version
+      run: go version
 
     - name: Set up Go 1.13
       uses: actions/setup-go@v1
