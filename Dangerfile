@@ -13,4 +13,4 @@ fail("fdescribe left in tests") if `grep -r fdescribe specs/ `.length > 1
 fail("fit left in tests") if `grep -r fit specs/ `.length > 1
 
 # add trial label 
-github.api.add_label(github.pr_json[:base][:repo][:full_name], github.pr_json[:number], ["trial"]) if !github.pr_labels.include?("trial")
+github.api.add_labels_to_an_issue(github.pr_json[:base][:repo][:full_name], github.pr_json[:number], ["trial"]) if !github.pr_labels.include?("trial")
