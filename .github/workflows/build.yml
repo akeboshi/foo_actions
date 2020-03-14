@@ -32,6 +32,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Danger
-        uses: danger/kotlin@0.3.1
+        uses: danger/danger@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
