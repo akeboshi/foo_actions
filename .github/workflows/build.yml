@@ -32,6 +32,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Danger
-        uses: danger/danger@master
+        uses: ./.github/actions
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
