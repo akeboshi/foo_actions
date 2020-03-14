@@ -11,6 +11,6 @@ jobs:
       - name: Danger
         uses: ./.github/danger
         with:
-          args: --dangerfile ./.github/danger/DangerfileAutoLabel
+          args: --dangerfile="./.github/danger/DangerfileAutoLabel"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
