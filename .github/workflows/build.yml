@@ -24,4 +24,3 @@ jobs:
       
     - name: print!
       run: echo "github ref; ${{ github.ref }}, base_ref; ${GITHUB_REF#refs/heads/}"
-        
