@@ -1,14 +1,16 @@
 on:
   pull_request:
-     types: [opened, edited, synchronize, rerequested]
-name: Danger Pull Request
+     types: [opened]
+name: Auto Label
 jobs:
-  pr-check:
+  auto-label:
     name: "Run Danger"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - name: Danger
         uses: ./.github/danger
+        with:
+          args: --dangerfile ./.github/danger/DangerfileAutoLabel
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
