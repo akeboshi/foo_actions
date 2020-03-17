@@ -1,5 +1,5 @@
 feature:
-  - "**"
+  - "**, {dot: true}"
 
 github:
   - ".github/**"
