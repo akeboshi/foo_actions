@@ -1,2 +1,5 @@
 feature:
-  - **/*
+  - "**"
+
+github:
+  - ".github/**"
