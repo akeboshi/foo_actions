@@ -3,14 +3,9 @@ on:
      types: [opened]
 name: Auto Label
 jobs:
-  auto-label:
-    name: "Run Danger"
+  triage:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - name: Danger
-        uses: ./.github/danger
-        with:
-          args: --dangerfile="./.github/danger/DangerfileAutoLabel"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - uses: actions/labeler@v2
+      with:
+        repo-token: "${{ secrets.GITHUB_TOKEN }}"
