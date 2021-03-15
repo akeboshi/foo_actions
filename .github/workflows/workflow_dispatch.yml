@@ -16,4 +16,4 @@ jobs:
        echo "Log level: ${{ github.event.inputs.logLevel }}"
        echo "Tags: ${{ github.event.inputs.some_string }}" 
        echo "actor: ${{ github.actor }}"
-       echo "event: ${{ toJSON(github.event.pull_request) }}"
+       echo "event: ${{ toJSON(github) }}"
