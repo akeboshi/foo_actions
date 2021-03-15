@@ -5,8 +5,8 @@ on:
        description: 'Log level'     
        required: true
        default: 'warning'
-     tags:
-       description: 'Test scenario tags'
+     some_string:
+       description: 'なにかいれて'
        
 jobs:
   printInputs:
@@ -14,4 +14,6 @@ jobs:
     steps:
     - run: |
        echo "Log level: ${{ github.event.inputs.logLevel }}"
-       echo "Tags: ${{ github.event.inputs.tags }}" 
+       echo "Tags: ${{ github.event.inputs.some_string }}" 
+       echo "actor: ${{ github.actor }}"
+       echo "event: ${{ toJSON(github) }}"
