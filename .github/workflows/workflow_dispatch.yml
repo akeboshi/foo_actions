@@ -15,3 +15,5 @@ jobs:
     - run: |
        echo "Log level: ${{ github.event.inputs.logLevel }}"
        echo "Tags: ${{ github.event.inputs.tags }}" 
+       echo "actor: ${{ github.actor }}"
+       echo "event: ${{ github.event }}"
