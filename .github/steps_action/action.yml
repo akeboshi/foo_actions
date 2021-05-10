@@ -3,7 +3,9 @@ description: 'Hello 1,2'
 runs:
   using: "composite"
   steps:
-    - run: echo Hello 1.
+    - name: hello 1
+      run: echo Hello 1.
       shell: bash
-    - run: echo Hello 2
+    - name: hello 2
+      run: echo Hello 2
       shell: bash
