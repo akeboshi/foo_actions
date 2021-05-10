@@ -17,3 +17,4 @@ jobs:
        echo "Tags: ${{ github.event.inputs.some_string }}" 
        echo "actor: ${{ github.actor }}"
        echo "event: ${{ toJSON(github) }}"
+    - uses: ./.github/steps_action
