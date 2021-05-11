@@ -7,6 +7,8 @@ on:
        default: 'warning'
      some_string:
        description: 'なにかいれて'
+ schedule:
+   - cron: "0/5 * * * *"
        
 jobs:
   printInputs:
