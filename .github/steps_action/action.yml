@@ -4,8 +4,8 @@ runs:
   using: "composite"
   steps:
     - name: hello 1
-      run: echo Hello 1.
+      run: echo "{${{ secrets.HOGE }}"
       shell: bash
     - name: hello 2
-      run: echo Hello 2
+      run: echo "{${{ secrets.FUGA }}"
       shell: bash
