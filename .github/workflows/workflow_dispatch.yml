@@ -12,6 +12,8 @@ jobs:
   printInputs:
     runs-on: ubuntu-latest
     steps:
+    - name: check github
+      run: echo ${{ toJSON(github) }}
     - uses: actions/checkout@v2
     - run: |
        echo "Log level: ${{ github.event.inputs.logLevel }}"
