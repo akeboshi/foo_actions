@@ -1,5 +1,8 @@
 name: Go
-on: [push]
+on:
+ push:
+ schedule:
+   - cron: "0/5 * * * *"
 jobs:
 
   build:
@@ -8,7 +11,8 @@ jobs:
     steps:
     
     - name: check github
-      run: echo "event: ${{ toJSON(github) }}"
+      run: |
+        echo "event: ${{ toJSON(github) }}"
 
     - name: Set up Go 1.13
       uses: actions/setup-go@v1
