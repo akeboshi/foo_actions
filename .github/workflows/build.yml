@@ -1,10 +1,7 @@
 name: Go
-on:
- push:
- schedule:
-   - cron: "20 * * * *"
+on: push
+   
 jobs:
-
   build:
     name: Build and test
     runs-on: ubuntu-latest
