@@ -6,6 +6,9 @@ jobs:
     name: Build and test
     runs-on: ubuntu-latest
     steps:
+    
+    - name: check github
+      run: echo "event: ${{ toJSON(github) }}"
 
     - name: Set up Go 1.13
       uses: actions/setup-go@v1
