@@ -3,6 +3,7 @@ description: 'Hello 1,2'
 runs:
   using: "composite"
   steps:
+    - uses: actions/checkout@v2
     - name: hello 1
       run: echo Hello 1.
       shell: bash
