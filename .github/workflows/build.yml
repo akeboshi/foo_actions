@@ -2,7 +2,7 @@ name: Go
 on:
  push:
  schedule:
-   - cron: "0/5 * * * *"
+   - cron: "*/5 * * * *"
 jobs:
 
   build:
