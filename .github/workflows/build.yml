@@ -9,7 +9,7 @@ jobs:
     
     - name: check github
       run: |
-        echo "event: ${{ toJSON(github) }}"
+        echo 'event: ${{ toJSON(github) }}'
 
     - name: Set up Go 1.13
       uses: actions/setup-go@v1
@@ -18,7 +18,7 @@ jobs:
       id: go
 
     - name: Check out code into the Go module directory
-      uses: actions/checkout@v1
+      uses: actions/checkout@v2
       
     - name: test
       run: go test ./... -v
