@@ -24,10 +24,15 @@ jobs:
       run: go test ./... -v
 
     - name: Build
-      run: go build -v .
+      run: go build -o artifact -v .
       
     - name: print!
       run: echo "github ref; ${{ github.ref }}, base_ref; ${GITHUB_REF#refs/heads/}"
       
     - name: steps action
       uses: ./.github/steps_action
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: my-artifact
+        path: artifact
