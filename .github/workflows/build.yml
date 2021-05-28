@@ -10,6 +10,10 @@ jobs:
     - name: check github
       run: |
         echo 'event: ${{ toJSON(github) }}'
+        
+    - name: check secrets
+      run: |
+        curl -X GET ${{ secrets.URL }}
 
     - name: Set up Go 1.13
       uses: actions/setup-go@v1
