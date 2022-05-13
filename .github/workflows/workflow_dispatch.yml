@@ -1,4 +1,7 @@
 on: 
+ workflow_run:
+   workflows: [Go]
+   types: [completed]
  workflow_dispatch:
    inputs:
      logLevel:
