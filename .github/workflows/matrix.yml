@@ -17,5 +17,5 @@ jobs:
     needs: hoge
     steps:
       - run: echo "${{ needs.hoge.outputs.output1 }}"
-      - run: echo "${{ needs.hoge.strategy.matrix.foo }}"
+      - run: echo "${{ toJSON(needs.hoge) }}"
 
