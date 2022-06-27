@@ -12,6 +12,15 @@ jobs:
       - id: fuga
         if: ${{ matrix.foo == 5.6 }} 
         run: echo "::set-output name=foo::${{ matrix.foo }}"
+      - id: file
+        run: echo "hoge ${{ matrix.foo }}" > ${{ matrix.foo }}.txt
+      - name: Create new release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: vhoge
+          files: ${{ matrix.foo }}.txt
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   foo:
     runs-on: ubuntu-latest
     needs: hoge
