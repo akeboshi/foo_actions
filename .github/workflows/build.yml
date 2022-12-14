@@ -7,6 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     
+    - uses: actions/github-script@v6
+      with:
+         script: |
+            core.setFailed('失敗させてみる')
+    
     - name: check github
       run: |
         echo 'event: ${{ toJSON(github) }}'
