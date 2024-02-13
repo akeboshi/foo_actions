@@ -10,6 +10,8 @@ body:
     attributes:
       value: |
         Thanks for taking the time to fill out this bug report!
+
+        hoge
   - type: input
     id: contact
     attributes:
