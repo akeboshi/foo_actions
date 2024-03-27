@@ -1,0 +1,24 @@
+name: Create Tag
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get the version
+        id: get_version
+        run: echo "VERSION=1.0.0" >> $GITHUB_OUTPUT
+
+      - name: Create Tag
+        if: steps.get_version.outputs.VERSION != *"-SNAPSHOT"*
+        run: |
+          VERSION=${{ steps.get_version.outputs.VERSION }}
+          if [[ ! $VERSION == *"-SNAPSHOT"* ]]; then
+            git tag $VERSION
+            git push origin $VERSION
+          fi
