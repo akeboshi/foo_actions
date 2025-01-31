@@ -1,0 +1,11 @@
+name: PR Target Hello
+
+on:
+  pull_request_target:
+
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello
+        run: echo "Hello!"
