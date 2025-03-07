@@ -31846,20 +31846,21 @@ async function run() {
         "me": ["akeboshi"]
       };
 
-      let newCommentBody = commentBody;
+      let newMention = null;
 
       for (const [key, users] of Object.entries(members)) {
         const regex = new RegExp(`\\bto ${key}\\b`, "g");
         if (regex.test(commentBody)) {
-          newCommentBody = newCommentBody.replace(regex, users.map(u => `@${u}`).join(" "));
+          newMention = users.map(u => `@${u}`).join(" ");
+          break;
         }
       }
 
-      if (newCommentBody !== commentBody) {
+      if (newMention) {
         await octokit.rest.issues.createComment({
           ...repo,
           issue_number: issueNumber,
-          body: newCommentBody
+          body: `${newMention}\n↑`
         });
       }
     }
