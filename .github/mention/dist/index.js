@@ -31849,7 +31849,7 @@ async function run() {
       let newMention = null;
 
       for (const [key, users] of Object.entries(members)) {
-        const regex = new RegExp(`\\bto ${key}\\b`, "g");
+        const regex = new RegExp(`\\bto\s${key}\\b`, "g");
         if (regex.test(commentBody)) {
           newMention = users.map(u => `@${u}`).join(" ");
           break;
@@ -31860,7 +31860,7 @@ async function run() {
         await octokit.rest.issues.createComment({
           ...repo,
           issue_number: issueNumber,
-          body: `${newMention}\n↑`
+          body: `${newMention} ↑`
         });
       }
     }
