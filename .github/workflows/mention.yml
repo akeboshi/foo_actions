@@ -8,6 +8,7 @@ jobs:
   mention:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: Run mention action
         uses: ./.github/mention
         with:
