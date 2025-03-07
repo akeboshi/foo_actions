@@ -31851,7 +31851,7 @@ async function run() {
       let newMention = null;
 
       for (const [key, users] of Object.entries(members)) {
-        const regex = new RegExp(`\s+to\s+${key}\s+`, "g");
+        const regex = new RegExp(`\s+to\s+${key}\s*`, "g");
 
         if (context.eventName === "issue_comment" && context.payload.action === "edited") {
             const previousBody = context.payload.changes?.body?.from || "";
