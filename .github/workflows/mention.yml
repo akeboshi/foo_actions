@@ -1,0 +1,14 @@
+name: Mention Outside Collaborators
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  mention:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run mention action
+        uses: ./.github/mention
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,10 @@
+name: "Mention Outside Collaborators"
+description: "Mention outside collaborators in issue comments"
+
+inputs:
+  github-token:
+    description: "GitHub token for API access"
+    required: true
+runs:
+  using: "node20"
+  main: "dist/index.js"
