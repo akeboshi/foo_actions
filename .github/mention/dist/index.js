@@ -31849,7 +31849,7 @@ async function run() {
       let newMention = null;
 
       for (const [key, users] of Object.entries(members)) {
-        const regex = new RegExp(`\\bto\s+${key}\\b`, "g");
+        const regex = new RegExp(`\\s+to\\s+${key}\\s+`, "g");
         if (regex.test(commentBody)) {
           newMention = users.map(u => `@${u}`).join(" ");
           break;
